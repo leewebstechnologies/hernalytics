@@ -23,9 +23,14 @@ const Body = () => {
           </ul>
         </div>
       </div>
+      <div className="btn-1">
+        <button className="btn-1">+</button>
+        <button className="btn-2">-</button>
+      </div>
       <div className="img">
         <img className="bodyMap" src="./assets/images/map.png" alt="map" />
       </div>
+     
     </div>
   );
 };
