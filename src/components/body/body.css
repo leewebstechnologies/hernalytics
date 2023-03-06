@@ -52,5 +52,51 @@ h5 {
 }
 
 .btn-1 {
-  margin-right: auto;
+  flex: 3;
+  margin-left: 1400px;
+  display: flex;
+  padding: 50px;
+  flex-direction: column;
+
+}
+
+.btn-2 {
+  margin-top: 50px;
+  margin-right: 120px;
+
+}
+
+.btnBody {
+  margin-left: auto;
+  margin-top: 25px;
+  background-color: #1b1f30;
+  margin-left: auto;
+  padding-bottom: 10px;
+  padding-bottom: -5px;
+}
+
+.buttons {
+  background-color: #1b1f30;
+  align-items: center;
+  justify-content: center;
+  margin-left: 150px;
+  border: 1px solid #363d5b;
+  /* padding: 40px; */
+}
+
+ .bodyMap {
+  margin-right: 80px;
+}
+
+.btnplus {
+margin-left: 120px;
+display: flex;
+flex-direction: column;
+}
+
+.btnminus {
+  margin-left: 120px;
+
+display: flex;
+flex-direction: column;
 }
