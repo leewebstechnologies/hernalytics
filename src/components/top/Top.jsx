@@ -57,16 +57,15 @@ const Top = () => {
             </li>
           </ul>
         </div>
-        
       </div>
       <hr className="line" />
       <div className="btnTop">
         <div className="round">
-          <img className="raceTop" src="./assets/images/map.png" alt="map" />
-          <div className="button">
-            <button className="btnplus">+</button>
-            <button className="btnminus">-</button>
+          <div className="buttons">
+            <button className="btn">+</button>
+            <button className="btn">-</button>
           </div>
+          <img className="raceTop" src="./assets/images/map.png" alt="map" />
         </div>
       </div>
       <div className="round2">
@@ -111,7 +110,3 @@ const Top = () => {
 };
 
 export default Top;
-
-
-
-
