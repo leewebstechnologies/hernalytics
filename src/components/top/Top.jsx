@@ -1,4 +1,5 @@
 import "./top.css";
+import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";
 
 const Top = () => {
   return (
@@ -12,7 +13,12 @@ const Top = () => {
         <div className="topTitles">
           <ul className="topList">
             <li className="topListItem">
-              <h5>Election Date</h5>
+              <div className="dropdown">
+                <h5 className="dropbtn">
+                  Election Date
+                  <KeyboardArrowDown className="arrow" />
+                </h5>
+              </div>
             </li>
             <li className="topListItem">
               <h5>Presidential</h5>

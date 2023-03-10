@@ -47,6 +47,7 @@ h5 {
 
 .topListItem {
   margin-right: 120px;
+  overflow: hidden;
 }
 .topMap {
   margin-left: 400px;
@@ -173,4 +174,15 @@ h5 {
   color: #fff;
   margin-top: 20px;
   cursor: pointer;
+}
+
+.dropdown {
+  overflow: hidden;
+  float: left;
+}
+
+.dropdown .dropbtn {}
+
+.arrow {
+  color: #fff;
 }
