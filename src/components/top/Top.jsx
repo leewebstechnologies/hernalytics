@@ -1,5 +1,4 @@
 import "./top.css";
-import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";
 
 const Top = () => {
   return (
@@ -13,21 +12,52 @@ const Top = () => {
         <div className="topTitles">
           <ul className="topList">
             <li className="topListItem">
-              <div className="dropdown">
-                <h5 className="dropbtn">
-                  Election Data
-                  <KeyboardArrowDown className="arrow" />
-                </h5>
+              <div class="select">
+                <select>
+                  <option value="1">Election Data</option>
+                  <option value="2">Pre-Election</option>
+                  <option value="3"> Election Date Live Updates</option>
+                  <option value="4">Post-Election Analysis</option>
+                </select>
               </div>
             </li>
             <li className="topListItem">
-              <h5>Presidential</h5>
+              <div class="select">
+                <select>
+                  <option value="1">Presidential</option>
+                  <option value="2">Presidential</option>
+                  <option value="3">Gubernatorial</option>
+                  <option value="4">Senate</option>
+                  <option value="5">House of Representatives</option>
+                </select>
+              </div>
             </li>
             <li className="topListItem">
-              <h5>2023</h5>
+              <div class="select">
+                <select>
+                  <option value="1">2023</option>
+                  <option value="2">2019</option>
+                  <option value="3">2015</option>
+                  <option value="3">2011</option>
+                  <option value="3">2007</option>
+                  <option value="3">2003</option>
+                  <option value="3">1999</option>
+                  <option value="3">1995</option>
+                  <option value="3">1991</option>
+                  <option value="3">1987</option>
+                  <option value="3">1983</option>
+                  <option value="3">1979</option>
+                  <option value="3">1975</option>
+                  <option value="3">1971</option>
+                  <option value="3">1967</option>
+                  <option value="3">1963</option>
+                  <option value="3">1959</option>
+                </select>
+              </div>
             </li>
           </ul>
         </div>
+        
       </div>
       <hr className="line" />
       <div className="btnTop">
@@ -81,3 +111,7 @@ const Top = () => {
 };
 
 export default Top;
+
+
+
+

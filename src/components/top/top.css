@@ -176,13 +176,12 @@ h5 {
   cursor: pointer;
 }
 
-.dropdown {
-  overflow: hidden;
-  float: left;
-}
-
-.dropdown .dropbtn {}
-
-.arrow {
+select {
+  cursor: pointer;
+  flex: 1;
   color: #fff;
+  background-color: #1b1f30;
+  border-radius: 5px;
+  padding: 10px 10px;
 }
+
