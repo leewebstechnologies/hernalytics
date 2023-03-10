@@ -15,7 +15,7 @@ const Top = () => {
             <li className="topListItem">
               <div className="dropdown">
                 <h5 className="dropbtn">
-                  Election Date
+                  Election Data
                   <KeyboardArrowDown className="arrow" />
                 </h5>
               </div>
