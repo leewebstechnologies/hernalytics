@@ -1,8 +1,53 @@
-import "./top.css";
+import { useEffect, useState } from "react";
 import axios from "axios";
+import "./top.css";
 
-// const PresidentFetch = 
+// const PresidentFetch =
 const Top = () => {
+  const [preResult, setPresResult] = useState([]);
+  const [guberResult, setGuberResult] = useState([]);
+  const [dataType, setDataType] = useState("PRE_ANALYSIS_MAP");
+  // console.log("preResult", preResult);
+  console.log("guberResult", guberResult.Abia);
+
+  const presidentialUrl =
+    "https://elect-her.herokuapp.com/api/v1/elections/candidate-total-votes?type=president";
+
+  const gubernatorialUrl =
+    "https://elect-her.herokuapp.com/api/v1/elections/candidate-total-votes?type=state_result";
+
+  const getPresidentialResult = async () => {
+    try {
+      const result = await axios.get(presidentialUrl);
+      setPresResult(result.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getPresidentialResult();
+  }, []);
+
+  const getGubernatorialResult = async () => {
+    try {
+      const result = await axios.get(gubernatorialUrl);
+      setGuberResult(result.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getGubernatorialResult();
+  }, []);
+
+  // useEffect(() => {
+  //   setDataType({
+  //     type: 'PRE_ANALYSIS_MAP',
+  //   });
+  // }, []);
+
   return (
     <div className="top">
       <div className="topTitle">
@@ -25,12 +70,19 @@ const Top = () => {
             </li>
             <li className="topListItem">
               <div class="select">
-                <select>
-                  <option value="1">Presidential</option>
-                  <option value="2">Presidential</option>
-                  <option value="3">Gubernatorial</option>
-                  <option value="4">Senate</option>
-                  <option value="5">House of Representatives</option>
+                <select
+                  value={dataType}
+                  onChange={(e) => {
+                    setDataType(e.target.value);
+                  }}
+                >
+                  <option value="PRE_ANALYSIS_MAP">Pres-Analysis</option>
+                  <option value="PRESIDENTIAL_OUTCOME">Presidential</option>
+                  <option value="GUBER_OUTCOME">Gubernatorial</option>
+                  <option value="SENA_OUTCOME">Senate</option>
+                  <option value="HOUSE_OUTCOME">
+                    House of Representatives
+                  </option>
                 </select>
               </div>
             </li>
@@ -61,21 +113,67 @@ const Top = () => {
         </div>
       </div>
       <hr className="line" />
-      <div className="btnTop">
-        <div className="round">
-          <div className="buttons">
-            <button className="btn">+</button>
-            <button className="btn">-</button>
+      {dataType === "PRE_ANALYSIS_MAP" ? (
+        <>
+          <div className="btnTop">
+            <div className="round">
+              <div className="buttons">
+                <button className="btn">+</button>
+                <button className="btn">-</button>
+              </div>
+              <img
+                className="raceTop"
+                src="./assets/images/map.png"
+                alt="map"
+              />
+            </div>
           </div>
-          <img className="raceTop" src="./assets/images/map.png" alt="map" />
-        </div>
-      </div>
-      <div className="round2">
-        <div className="secondButtons">
-          <img className="topMap" src="./assets/images/circle.png" alt="map" />
-          <img className="topMap" src="./assets/images/map2.png" alt="map" />
-        </div>
-      </div>
+          <div className="round2">
+            <div className="secondButtons">
+              <img
+                className="topMap"
+                src="./assets/images/circle.png"
+                alt="map"
+              />
+              <img
+                className="topMap"
+                src="./assets/images/map2.png"
+                alt="map"
+              />
+            </div>
+          </div>
+        </>
+      ) : dataType === "PRESIDENTIAL_OUTCOME" ? (
+        <>
+          <div className="table-container">
+            <table>
+              <tr>
+                <th>Candidate</th>
+                <th>Party</th>
+                <th>Gender</th>
+                <th>Running Mate</th>
+              </tr>
+              {preResult.map((pre) => (
+                <tr>
+                  <td>{pre.full_name}</td>
+                  <td>{pre.political_party_name}</td>
+                  <td>Male</td>
+                  <td>{pre.candidates_vote}</td>
+                </tr>
+              ))}
+            </table>
+          </div>
+        </>
+      ) : null}
+      {/* <table>
+  <tr>
+    <th>{guberResult}</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+</table> */}
+
       <div className="footers">
         <div className="footerb">
           <div className="footerLeft">
@@ -112,3 +210,5 @@ const Top = () => {
 };
 
 export default Top;
+
+
